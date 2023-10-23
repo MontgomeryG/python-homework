@@ -169,4 +169,7 @@ class MCSimulation:
         metrics = self.simulated_return.iloc[-1].describe()
         ci_series = self.confidence_interval
         ci_series.index = ["95% CI Lower","95% CI Upper"]
-        return metrics.append(ci_series)
+        summary = pd.concat([metrics, ci_series], axis=0)
+        return summary
+    
+    # REMOVED .append(ci_series)
