@@ -1,4 +1,4 @@
-INSERT INTO card_holder VALUES
+INSERT INTO card_holder_table VALUES
     (1, 'Robert Johnson'),
     (2, 'Shane Shaffer'),
     (3, 'Elizabeth Sawyer'),
