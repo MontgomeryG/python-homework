@@ -1,15 +1,20 @@
+--  FOREIGN KEY (parent_id) REFERENCES parents(parent_id),
+
 --id,name
 CREATE TABLE merchant_category_table (
-id INT,
+id INTEGER PRIMARY KEY,
 name VARCHAR(50)
 );
 
 
 -- id,name,id_merchant_category
+-- link merchant_table to merchant category table
+-- PK is id
 CREATE TABLE merchant_table(
-  id VARCHAR(30) NOT NULL,
-  name VARCHAR(50) NOT NULL,
-  id_merchant_category INT
+id VARCHAR(30) PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+id_merchant_category INTEGER,
+FOREIGN KEY (id_merchant_category) REFERENCES merchant_category_table(id)
 );
 
 
@@ -17,7 +22,7 @@ CREATE TABLE merchant_table(
 --create card holder table
 --id,name
 CREATE TABLE card_holder_table (
-id INT,
+id INTEGER PRIMARY KEY,
 name VARCHAR(50)
 );
 
@@ -26,8 +31,9 @@ name VARCHAR(50)
 --card, cardholder_id
 
 CREATE TABLE credit_card_table (
-card VARCHAR(20) NOT NULL,
-cardholder_id INT NOT NULL
+card VARCHAR(20) PRIMARY KEY,
+cardholder_id INTEGER,
+FOREIGN KEY (cardholder_id) REFERENCES card_holder_table(id)
 );
 
 
@@ -37,9 +43,11 @@ cardholder_id INT NOT NULL
 
 --id,date,amount,card,id_merchant
 CREATE TABLE transaction_table(
-  id VARCHAR(30) NOT NULL,
+  id VARCHAR(30) PRIMARY KEY,
   date TIMESTAMP,
   amount FLOAT,
   card VARCHAR(20),
-  id_merchant INT
+  id_merchant VARCHAR(30),
+  FOREIGN KEY (id_merchant) REFERENCES merchant_table(id),
+  FOREIGN KEY (card) REFERENCES credit_card_table(card)
 );
