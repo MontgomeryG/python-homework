@@ -14,6 +14,12 @@ We are trying to predict wheter or not the person is qualified for the loan they
 We trained the machine of a portion of the data that we first balanced. We had to balanced it because the healthy loans outnumbered the unhealthy ones by a substantial amount. So we balanced the data, trained the data, and then tested/validated the algorithm with the remaining portion of the data that was not used to train it. 
 * Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
 
+We used random oversampling to balance the data. 
+
+We used logistic regression because we were trying to predict a binary outcome using multiple independent variables.
+
+
+
 ## Results
 
 Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
@@ -21,18 +27,15 @@ Using bulleted lists, describe the balanced accuracy scores and the precision an
 * Machine Learning Model 1:
   * Description of Model 1 Accuracy, Precision, and Recall scores.
 
-For 0, indicating a loan status of approved:  
+For '0', indicating a loan status of approved:  
   - Accuracy (f1-score): 1.00
   - Precision: 1.00
   - Recall: 0.99
 
-
-For 1:
+For '1', indicating a loan status of denied, risky loan:
   - Accuracy: 0.88
   - Precision: 0.85
   - Recall: 0.91
-
-
 
 * Machine Learning Model 2:
   * Description of Model 2 Accuracy, Precision, and Recall scores.
@@ -51,8 +54,9 @@ For 1:
 Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
 * Which one seems to perform best? How do you know it performs best?
 * Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+* If you do not recommend any of the models, please justify your reasoning.
 
-If you do not recommend any of the models, please justify your reasoning.
+
 
 From model 1 to model 2, we saw substantial improvements in the machine learning model's ability to accurately predict the '1''s, while the machine's ability to predict '0''s remained the same. 
 
