@@ -16,18 +16,27 @@ Here is a plot of the resluts of our baseline algorithm:
 
 ## Adjusting size of training dataset
 
-- Changed the month from 3 to 12. Our accuracy increased slightly, but our new model shows a value of 0 for precision for predicting -1.0; not good. Somehow by increasing our DateOffset from 3 to 12 months, our program can no longer predict when our signal is -1.0. 
-    Then we tried 'months=6' to see if we'd get some precision back. This change led to a decrease in our model's accuracy compared to the origional model using 3 months. Decreasing the DateOffset from 12 months to 6 months brings back some precision into our results. 
-    Using a DateOffset of 6 months gave us the best results out of all the models we implemented.
-    ![](6monthsPlot.png)
-    However, we should wonder: will these results hold up on live data?
+Changed the month from 3 to 12. Our accuracy increased slightly, but our new model shows a value of 0 for precision for predicting -1.0; not good. Somehow by increasing our DateOffset from 3 to 12 months, our program can no longer predict when our signal is -1.0. 
+
+Then we tried 'months=6' to see if we'd get some precision back. This change led to a decrease in our model's accuracy compared to the origional model using 3 months. Decreasing the DateOffset from 12 months to 6 months brings back some precision into our results. 
+
+Using a DateOffset of 6 months gave us the best results out of all the models we implemented.
+
+![](6monthsPlot.png)
+
+However, we should wonder: will these results hold up on live data?
 
 
 ## Adjusting SMA input features
 
-- We changed the short_window to 9 and the long_window to 50. A lot of day traders use the 9 and 50 period moving averages.
-- After running the program: 
-    Wow. Very interesting that changing the long and short window to 9 and 50 does not work at all. Makes me wonder how the origional 4 and 100 short and long windows were choosen in the first place. Maybe, if we really wanted to see which combination of long/short windows works the best, we could iterate changing the two numbers and printing the classification reports to see which combination proves most best.
+We changed the short_window to 9 and the long_window to 50. A lot of day traders use the 9 and 50 period moving averages.
+
+![alt text](smaChangesPlot.png)
+
+ 
+Wow. Very interesting that changing the long and short window to 9 and 50 does not work at all. Makes me wonder how the origional 4 and 100 short and long windows were choosen in the first place. 
+
+Maybe, if we really wanted to see which combination of long/short windows works the best, we could iterate changing the two numbers and printing the classification reports to see which combination proves most best.
 
 
 ## New machine learning classifier
