@@ -4,7 +4,7 @@
 
 - Changed the month from 3 to 12. Our accuracy increased slightly, but our new model shows a value of 0 for precision for predicting -1.0; not good. Somehow by increasing our DateOffset from 3 to 12 months, our program can no longer predict when our signal is -1.0. 
     Then we tried 'months=6' to see if we'd get some precision back. This change led to a decrease in our model's accuracy compared to the origional model using 3 months. Decreasing the DateOffset from 12 months to 6 months brings back some precision into our results. 
-    Using a DateOffset of 6 months gave us the best results out of all the models we implemented (see module14graph.png). However, we should wonder: will these results hold up on live data?
+    Using a DateOffset of 6 months gave us the best results out of all the models we implemented ![graph](module14graph.png)(see module14graph.png). However, we should wonder: will these results hold up on live data?
 
 
 ## Adjusting SMA input features
