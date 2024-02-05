@@ -1,10 +1,26 @@
+# Machine Learning Trading Bot
+
+In this project we will use machine learning to predict signals for algorithm trading.
+
+We begin with implementing Support Vector Machines (SVM), using a short and long moving average with windows of 4 and 100, respectively. 
+
+Here is a plot of the resluts of our baseline algorithm:
+
+![Baseline](baselinePlot.png)
+
+
+
+
+
 # Changes to the origional SVM trading algorithm.
 
 ## Adjusting size of training dataset
 
 - Changed the month from 3 to 12. Our accuracy increased slightly, but our new model shows a value of 0 for precision for predicting -1.0; not good. Somehow by increasing our DateOffset from 3 to 12 months, our program can no longer predict when our signal is -1.0. 
     Then we tried 'months=6' to see if we'd get some precision back. This change led to a decrease in our model's accuracy compared to the origional model using 3 months. Decreasing the DateOffset from 12 months to 6 months brings back some precision into our results. 
-    Using a DateOffset of 6 months gave us the best results out of all the models we implemented ![graph](module14graph.png)(see module14graph.png). However, we should wonder: will these results hold up on live data?
+    Using a DateOffset of 6 months gave us the best results out of all the models we implemented.
+    ![](6monthsPlot.png)
+    However, we should wonder: will these results hold up on live data?
 
 
 ## Adjusting SMA input features
@@ -15,10 +31,12 @@
 
 
 ## New machine learning classifier
+Using a basic decision tree implementation, we found our results to be worse all around. 
 
-- Using a basic decision dree implementation, we found our results to be worse all around. 
-    I believe that the decision tree model overfitted the data, which is something that Sklearn's documentation hinted at; that a drawback of using decisions trees is their tendency to overfit the data. As we can see based on the above graph, in the beginning of the model's training/testing periods it outperforms the actual returns substantially. However, towards about the beginning of 2017 the strategy's returns begin to fall and never really recover. This decision tree model completely 'misses the point'.
+![Decision Tree Implementation](treePlot.png)
 
-    If we wanted to improve this tree model, we could start off by pruning the tree, a method used to reduce overfitting.
+I believe that the decision tree model overfitted the data, which is something that Sklearn's documentation hinted at; that a drawback of using decisions trees is their tendency to overfit the data. As we can see based on the above graph, in the beginning of the model's training/testing periods it outperforms the actual returns substantially. However, towards about the beginning of 2017 the strategy's returns begin to fall and never really recover. This decision tree model completely 'misses the point'.
+
+If we wanted to improve this tree model, we could start off by pruning the tree, a method used to reduce overfitting.
 
 ### Ultimately, we should implement as many models as possible to determine which one seems best given this data set and our two highly-correlated variables. 
