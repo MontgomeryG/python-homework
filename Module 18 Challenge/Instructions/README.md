@@ -1,7 +1,6 @@
 # PyChain Ledger
 
-![alt=""]("/Users/montygash/Desktop/ghub/FinTechWork/UCBE-homework/Module 18 Challenge/Instructions/Starter_Code/pyChainScreenShot.png")
-
+![alt text](Starter_Code/pyChainScreenShot.png)
 
 4. Verify the block contents and hashes in the Streamlit dropdown menu. Take a screenshot of the Streamlit application page, which should detail a blockchain that consists of multiple blocks. Include the screenshot in the `README.md` file for your GitHub repository.
 
