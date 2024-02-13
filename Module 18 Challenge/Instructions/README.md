@@ -1,20 +1,13 @@
 # PyChain Ledger
 
-![alt text](Starter_Code/pyChainScreenShot.png)
+We are creating a Streamlit application that replicates the way a block chain is structured, by creating a ledger that stores hypothetical monetary transactions.
 
-4. Verify the block contents and hashes in the Streamlit dropdown menu. Take a screenshot of the Streamlit application page, which should detail a blockchain that consists of multiple blocks. Include the screenshot in the `README.md` file for your GitHub repository.
+This application takes in 3 inputs: string "sender", string "reciever", and float "amount".
 
-5. Test the blockchain validation process by using the web interface. Take a screenshot of the Streamlit application page, which should indicate the validity of the blockchain. Include the screenshot in the `README.md` file for your homework repository.
+![alt text](Images/Inputs.png)
 
----
-## Submission
+Our application stores the input information into our blockchain as a new block.
 
-You’ll upload the Python file for this assignment to your GitHub repository.
+Each newly created block contains the unique hash of the previous block, and that previous block's hash represents encrypted data for all of the blocks before it going back to the genisus of the chain. So, each step of the chain will introduce a new encryption.
 
-* Make sure to update the `README.md` file to include an explanation of the Steamlit application, a screenshot or video of your deployed Streamlit application, and any other information that’s needed to interact with your project.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
-
----
-
-© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![alt text](Images/ledger_test.png)
