@@ -9,4 +9,4 @@ Our application encrypts and stores the inputs into our blockchain as a new bloc
 
 ![alt text](Images/ledger_test.png)
 
-Each newly created block contains the unique hash of the previous block, and that previous block's hash represents encrypted data for all of the blocks before it going back to the genisus of the chain. So, each step of the chain will introduce a new encryption.
+Each newly created block contains the unique hash of the previous block, and that previous block's hash represents encrypted data for all of the blocks before it going back to the genisus of the chain. So, each step of the chain will introduce a new encryption. 
